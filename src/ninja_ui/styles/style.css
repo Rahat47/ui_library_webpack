@@ -1,0 +1,23 @@
+
+body{
+    font-size: 1.5em;
+}
+.container {
+    margin: 40px;
+    margin-top: 60px;
+}
+.title {
+    border: 1px dotted dimgray;
+}
+
+button{
+    width: 200px;
+    background: #eeeeee;
+    padding: 10px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    display: block;
+}
