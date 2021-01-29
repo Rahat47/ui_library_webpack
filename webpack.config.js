@@ -7,25 +7,28 @@ module.exports = {
     filename: 'bundle.js'
   },
   devServer: {
+    before: function (app, server) {
+      server._watch('./docs/**/*.html')
+    },
     contentBase: path.resolve(__dirname, 'docs'),
     publicPath: '/assets/'
   },
   module: {
     rules: [
       {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
-    },
-    {
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader']
-    }
-  ]
+    ]
   }
 };
